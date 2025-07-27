@@ -1,0 +1,37 @@
+{
+  "name": "edu-tools",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node dist/src/App.js",
+    "build": "rimraf dist && tsc",
+    "test": "npm run build && mocha --timeout 3000 --require ./test/mocha-setup.js dist/test/**/*.js",
+    "coverage": "nyc npm run test",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "check-coverage": "nyc check-coverage"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.8",
+    "@types/js-yaml": "^4.0.9",
+    "@types/markdown-it": "^14.1.2",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^24.1.0",
+    "chai": "^4.3.11",
+    "mocha": "^10.2.0",
+    "nyc": "^17.1.0",
+    "prettier": "^3.3.2",
+    "rimraf": "^6.0.1",
+    "source-map-support": "^0.5.21",
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "@vscode/markdown-it-katex": "^1.1.2",
+    "commander": "^14.0.0",
+    "globby": "^14.1.0",
+    "js-yaml": "^4.1.0",
+    "markdown-it": "^14.1.0",
+    "progress": "^2.0.3",
+    "zod": "^4.0.10"
+  },
+  "bin": "dist/src/App.js"
+}
